@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Barlow+Semi+Condensed:wght@500;600&family=Big+Shoulders+Display:wght@700&family=Bitter&family=Fira+Sans:wght@600&family=Fraunces:opsz,wght@9..144,700&family=Inconsolata:wght@600&family=Inter:wght@400;700&family=Josefin+Sans:wght@300;400;600&family=Karla:wght@400;700&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@400;500;700&family=Lexend+Deca&family=Lobster&family=Manrope:wght@500;700&family=Montserrat:wght@500;700&family=Open+Sans:wght@400;700&family=Outfit:wght@400;700&family=Overpass:wght@400;700&family=Poppins:ital,wght@0,100;0,300;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:wght@400;700&family=Red+Hat+Display:wght@500;700;900&family=Roboto:wght@100&family=Rubik:wght@400;500;700&display=swap');
+
+
+/* general style */
+
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: url(/images/bg-intro-desktop.png) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: hsl(0, 100%, 74%);
+    color: white;
+}
+
+
+h1 {
+    font-size: 3rem;
+}
+
+p {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+
+/* main section style */
+
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    padding: 3%;
+}
+
+.texts {
+    width: 40%;
+    margin: auto 0;
+    min-width: 25rem;
+}
+
+.texts p {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.texts p::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    height: 2px;
+    background-color: aqua;
+    transform: scaleX(0);
+    transition: 0.25s ease-in;
+    cursor: pointer;
+}
+
+.texts p:hover::after {
+    transform: scaleX(1);
+}
+
+
+.h1-animation {
+    animation-name: change-h1;
+    animation-duration: 4s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes change-h1 {
+    from {
+        color: white;
+    }
+
+    to {
+        color: aqua;
+    }
+}
+
+
+.sign-up-form {
+    width: 40%;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2%;
+    min-width: 25rem;
+}
+
+#try-free-box {
+    width: 100%;
+    border-radius: 10px;
+    background-color: hsl(248, 32%, 49%);
+    text-align: center;
+    margin-bottom: 4%;
+}
+
+.the-form {
+    background-color: white;
+    padding: 5%;
+    border-radius: 10px;
+
+}
+
+.form {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    margin: 2%;
+
+}
+
+
+
+.form input {
+    margin: 2% 0;
+    height: 3rem;
+    border-radius: 5px;
+    padding: 3%;
+    border-width: 1px;
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+}
+
+.input-div {
+    width: 100%;
+    position: relative;
+}
+
+.error-img {
+    position: absolute;
+    right: 15px;
+    top: 23px;
+    width: 1.2rem;
+    display: none;
+}
+
+.error-message {
+    position: absolute;
+    bottom: -18px;
+    right: 0;
+    width: fit-content;
+    color: red;
+    display: none;
+
+}
+
+
+
+.submit-button-div {
+    width: 100%;
+}
+
+.submit-button-div button {
+    width: 100%;
+    background-color: hsl(154, 59%, 51%);
+    border-width: 0;
+    color: white;
+    padding: 3%;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.7s ease;
+    cursor: pointer;
+}
+
+.submit-button-div button:hover {
+    transform: scale(1.1);
+}
+
+
+.the-form p {
+    color: black;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+#terms-and-services {
+    color: red;
+    cursor: pointer;
+    transition: 0.7s ease;
+    position: relative;
+}
+
+#terms-and-services:hover {
+    color: blueviolet;
+    transform: scale(1.1);
+}
+
+#terms-and-services:after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: red;
+    bottom: 0;
+    right: 0;
+    transform: scaleX(0);
+    transition: 0.25s ease;
+    transform-origin: bottom center;
+}
+
+#terms-and-services:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+
+
+/* Under animation class */
+
+.under-animation {
+    position: relative;
+}
+
+.under-animation::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: aqua;
+    transform: scaleX(0);
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    transform-origin: bottom center;
+    transition: 0.25s ease-out;
+}
+
+.under-animation:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom center;
+}
+
+
+/* keyframes */
+
+
+.change-color-animation {
+    animation-name: change-color;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes change-color {
+    from {
+        color: aqua;
+    }
+
+    to {
+        color: white;
+    }
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+.attribution {
+    font-size: 1rem;
+    text-align: center;
+}
+
+.attribution a {
+    color: white;
+    text-decoration: none;
+}
+
+
+@media(max-width:860px) {
+    .texts {
+        text-align: center;
+        width: 90%;
+        min-width: 14rem;
+    }
+
+
+
+
+}
+
+@media(max-width:415px) {
+
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    .sign-up-form {
+        width: 100%;
+        min-width: 14rem;
+    }
+}
